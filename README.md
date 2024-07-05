@@ -8,6 +8,8 @@ A tool to rename files with human-readable hashes.
 pip3 install friendly_hash
 ```
 
+add `export PATH=$PATH:~/.local/bin` to your .bashrc or .zshrc
+
 ## Usage
 
 To show the resulting filename:
