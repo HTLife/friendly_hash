@@ -66,6 +66,11 @@ friendly_hash -f 2024-07-05-09-15-18.bag
     poetry build
     poetry publish
     ```
+
+    ```bash
+    # use this to replace the mis-uploaded version
+    poetry publish --skip-existing
+    ```
     # pypi upload method 2 - twine
     ```
     twine upload dist/*
