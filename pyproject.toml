@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "friendly_hash"
+description = "A tool to rename files with human-readable hashes"
+authors = ["JackyLiu <jjkka132@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/HTLife/friendly_hash"
+repository = "https://github.com/HTLife/friendly_hash"
+keywords = ["hashing", "files", "renaming"]
+version = "0.0.0"
+
+
+
+[tool.poetry-version-plugin]
+source = "git-tag"
+
+
+[tool.poetry.dependencies]
+python = ">=3.6"
+codenamize = ">=1.2.3"
+
+[tool.poetry.scripts]
+friendly_hash = "friendly_hash.friendly_hash:main"
+
+[build-system]
+requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
+build-backend = "poetry_dynamic_versioning.backend"
+
+

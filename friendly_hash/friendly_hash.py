@@ -1,7 +1,10 @@
 import os
 import argparse
 from codenamize import codenamize
-from friendly_hash.version import __version__
+import importlib.metadata
+
+app_name = "friendly_hash"  # My app's "distribution package" name 
+app_version = importlib.metadata.version(app_name)
 
 def get_friendly_hash(filename):
     """Generate a human-readable hash for the given filename."""
@@ -34,7 +37,7 @@ def main():
     parser.add_argument(
         '-v', '--version',
         action='version',
-        version=f'%(prog)s {__version__}',
+        version=f'%(prog)s {app_version}',
         help='Show the version number and exit'
     )
     

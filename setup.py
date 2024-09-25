@@ -1,4 +1,14 @@
 from setuptools import setup, find_packages
+from setuptools.command.install import install
+import os
+
+class CustomInstallCommand(install):
+    """Customized setuptools install command - prints a message after installation."""
+    def run(self):
+        install.run(self)
+        # Custom post-install message
+        print("\n\nPlease add \n`export PATH=$PATH:~/.local/bin`\n to your .bashrc or .zshrc\n")
+
 
 # Read the version number from version.py
 version = {}
@@ -24,6 +34,9 @@ setup(
     install_requires=[
         'codenamize>=1.2.3'
     ],
+    cmdclass={
+        'install': CustomInstallCommand,
+    },
     entry_points={
         'console_scripts': [
             'friendly_hash=friendly_hash.friendly_hash:main',
