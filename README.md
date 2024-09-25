@@ -51,3 +51,22 @@ friendly_hash -f 2024-07-05-09-15-18.bag
     pip3 install twine
     twine upload dist/*
     ```
+
+6. Update version
+
+    ```sh
+    rm dist/*
+    pip wheel . --wheel-dir dist/ --no-deps && pip install dist/*.whl 
+    ```
+
+    # pypi upload method 1 - poetry
+    ```
+    curl -sSL https://install.python-poetry.org | python3 -
+    poetry self add poetry-version-plugin
+    poetry build
+    poetry publish
+    ```
+    # pypi upload method 2 - twine
+    ```
+    twine upload dist/*
+    ```
